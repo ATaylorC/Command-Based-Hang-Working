@@ -4,6 +4,7 @@
 # the WPILib BSD license file in the root directory of this project.
 #
 
+
 import wpilib
 import commands2
 import commands2.cmd
@@ -13,6 +14,9 @@ from Subsystem.hang_ss import HangSubsystem
 
 import constants
 
+import logging
+logger = logging.getLogger("aniyah")
+
 
 class Hang(commands2.Command):
     def __init__(self, hang_ss: HangSubsystem) -> None:
@@ -20,8 +24,6 @@ class Hang(commands2.Command):
         self.hang_ss = hang_ss
 
     def initialize(self):
-        import logging
-        logger = logging.getLogger("aniyah")
         logger.info("running Hang command")
 
     def execute(self):
@@ -56,6 +58,9 @@ class StopMotor(commands2.Command):
     def __init__(self, hang_ss: HangSubsystem) -> None:
         super().__init__()
         self.hang_ss = hang_ss
+
+    def initialize(self):
+        logger.info("running StopMotor command")
 
     def execute(self):
         self.hang_ss.stop()

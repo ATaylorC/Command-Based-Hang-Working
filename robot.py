@@ -41,14 +41,14 @@ class Robot(commands2.TimedCommandRobot):
         if self.autonomousCommand is not None:
             self.autonomousCommand.cancel()
 
+    #def teleopPeriodic(self) -> None:
+
     def testInit(self) -> None:
         commands2.CommandScheduler.getInstance().cancelAll()
 
-    def teleopPeriodic(self) -> None:
 
-
-        if __name__ == "__main__":
-         wpilib.run(Robot)    
+if __name__ == "__main__":
+    wpilib.run(Robot)    
 
 
         

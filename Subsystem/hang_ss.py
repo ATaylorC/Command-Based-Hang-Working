@@ -23,3 +23,10 @@ class HangSubsystem(commands2.Subsystem):
     
     def stop(self):
         self.motor.set(0)
+
+    def is_stopped(self):
+        motor_speed = self.motor.get()
+        if motor_speed == 0:
+            return True
+        else:
+            return False
